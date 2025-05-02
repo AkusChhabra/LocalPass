@@ -1,0 +1,24 @@
+{
+  "name": "localpass",
+  "version": "1.0.0",
+  "description": "Password manager for local machines",
+  "main": "main.js",
+  "scripts": {
+    "test": "",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AkusChhabra/LocalPass.git"
+  },
+  "author": "Akus C.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AkusChhabra/LocalPass/issues"
+  },
+  "homepage": "https://github.com/AkusChhabra/LocalPass#readme",
+  "devDependencies": {
+    "electron": "^36.0.1"
+  },
+  "type": "commonjs"
+}

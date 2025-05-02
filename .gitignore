@@ -1,0 +1,4 @@
+/files
+*.txt
+/.dist
+/node_modules
