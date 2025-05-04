@@ -1,4 +1,5 @@
-/files
 *.txt
 /.dist
 /node_modules
+sample.js
+slicer.js
