@@ -1,8 +1,5 @@
 *.txt
 /.dist
 /node_modules
-sample.js
-slicer.js
 /old
-prac.js
 /files
