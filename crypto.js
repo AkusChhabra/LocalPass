@@ -48,10 +48,10 @@ function checkEncryptionValid(iv, encrypted) {
     return;
 }
 
-const message = "this is a test message";
+const message = "this is a test message 2";
 
 const encrypted = encrypt(message);
-console.log(encrypted);
+console.log("Encrypted: ", encrypted);
 
 const decrypted = decrypt(encrypted);
-console.log(decrypted);
+console.log("Decrypted: ", decrypted);

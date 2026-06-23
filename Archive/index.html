@@ -1,0 +1,55 @@
+<!--index.html-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <title>LocalPass</title>
+  </head>
+  <link rel="stylesheet" href="main.css" type="text/css">
+  <link rel="stylesheet" href="sidebar.css" type="text/css">
+  <body>
+    <div class="sidenav">
+      <a></a>
+      <a></a>
+      <a></a>
+      <a></a>
+      <a href="#">Dashboard</a>
+      <a href="#">Account</a>
+      <a></a>
+      <a href="#">Exit</a>
+    </div>
+    <div>
+      <h1 class="">Dashboard</h1>
+    </div>
+    <main class="table">
+        <section class="header-table"></section>
+          <h1>&nbspStored Passwords</h1>
+        <section class="body-table"></section>
+          <table>
+            <thead>
+              <tr>
+                <th>id</th>
+                <th> Website Logo </th>
+                <th> Website </th>
+                <th> Password </th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><button> Edit </button></td>
+              <td><button> Delete </button></td>
+            </tbody>
+          </table>
+          <button>+</button>
+    </main>
+  </body>
+  <script src="./crypto.js"></script>
+  <script src="./renderer.js"></script>
+</html>
