@@ -4,4 +4,4 @@ This application is intended to maintain a password database for the user to acc
 
 Application implements Electron JS framework.
 
-Dashboard will be run locally so all data is stored on the machine as a salted hash.
+Dashboard will run locally so all data is stored on the machine as a salted hash.
