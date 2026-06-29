@@ -85,6 +85,20 @@ a {
     background:#1d4ed8;
 }
 
+.del-btn{
+    background:#e63e3e;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.del-btn:hover{
+    background:#b30404;
+}
+
 .top-cards{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -128,7 +142,7 @@ a {
 
 .content{
     display:grid;
-    grid-template-columns:2fr 1fr;
+    grid-template-columns:2fr 0fr;
     gap:20px;
 }
 
@@ -219,10 +233,9 @@ td{
 </div>
 
 <div class="main">
-
     <div class="header">
         <h1>Dashboard</h1>
-        <button class="add-btn">+ Add Password</button>
+        <button id="add-pass-btn" class="add-btn">+ Add Password</button>
     </div>
 
     <div class="top-cards">
@@ -257,13 +270,12 @@ td{
 
         <div class="table-card">
             <h3 class="section-title">Saved Credentials</h3>
-
-            <table>
+            <table id="password-table">
                 <thead>
                     <tr>
                         <th>Website</th>
                         <th>Username</th>
-                        <th>Password Strength</th>
+                        <th>Password</th>
                         <th>Last Updated</th>
                     </tr>
                 </thead>
@@ -272,66 +284,18 @@ td{
                     <tr>
                         <td>Google</td>
                         <td>john.doe@gmail.com</td>
-                        <td><span class="status strong">Strong</span></td>
+                        <td>********</td>
                         <td>2 days ago</td>
-                    </tr>
-
-                    <tr>
-                        <td>GitHub</td>
-                        <td>johndoe</td>
-                        <td><span class="status strong">Strong</span></td>
-                        <td>1 week ago</td>
-                    </tr>
-
-                    <tr>
-                        <td>Netflix</td>
-                        <td>john.netflix</td>
-                        <td><span class="status medium">Medium</span></td>
-                        <td>3 weeks ago</td>
-                    </tr>
-
-                    <tr>
-                        <td>Amazon</td>
-                        <td>john.shop</td>
-                        <td><span class="status strong">Strong</span></td>
-                        <td>1 month ago</td>
+                        <td><button class="del-btn" onclick="deleteThisRow(this)">Delete</button></td>
                     </tr>
                 </tbody>
             </table>
         </div>
-
-        <div class="activity-card">
-            <h3 class="section-title">Recent Activity</h3>
-
-            <div class="activity">
-                <strong>Password Added</strong>
-                <div>GitHub Account</div>
-                <div class="activity-time">10 min ago</div>
-            </div>
-
-            <div class="activity">
-                <strong>Password Updated</strong>
-                <div>Google Account</div>
-                <div class="activity-time">2 hours ago</div>
-            </div>
-
-            <div class="activity">
-                <strong>Vault Backup</strong>
-                <div>Cloud Sync Complete</div>
-                <div class="activity-time">Today 09:30</div>
-            </div>
-
-            <div class="activity">
-                <strong>Security Scan</strong>
-                <div>No compromised passwords found</div>
-                <div class="activity-time">Yesterday</div>
-            </div>
-        </div>
-
     </div>
 
 </div>
 </body>
+<script src="src/index.js"></script>
 <script>
 
 const data = [
