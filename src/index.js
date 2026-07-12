@@ -5,10 +5,13 @@ Helper script to handle application user interactions
 */
 
 function openPassWindow() {
+    console.log("window opened")
     newPassWindow = window.open('add_password.html', 'Add New Password');
 }
 
 function addRow() {
+
+    console.log("adding row")
 
     website = document.getElementById("website-input")
     username = document.getElementById("username-input")
@@ -20,6 +23,8 @@ function addRow() {
 
     const newRowHTML = `<tr><td>${website}</td><td>${username}</td><td>${pw}</td><td>${last_updated}</td></tr>`;
     table.insertAdjacentHTML("beforeend", newRowHTML);
+
+    // Write to database
 
     newPassWindow.close('add_password.html');
 }

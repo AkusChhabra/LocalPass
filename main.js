@@ -20,8 +20,12 @@ const createWindow = () => {
   mainWindow.loadFile('index.html')
 
   // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
+  mainWindow.webContents.openDevTools()
 }
+
+app.on('browser-window-created', (event, window) => {
+  window.webContents.openDevTools()
+})
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
