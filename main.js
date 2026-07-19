@@ -1,8 +1,38 @@
 // main.js
 
 // Modules to control application life and create native browser window
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, ipcMain } = require('electron')
 const path = require('node:path')
+const Database = require('better-sqlite3');
+
+//const dbPath = path.join(app.getPath('userData'), 'database.db');
+//const db = new Database(dbPath);
+
+const db = new Database('app.db', { verbose: console.log });
+
+db.prepare(`
+  CREATE TABLE IF NOT EXISTS users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    website TEXT NOT NULL,
+    username TEXT UNIQUE NOT NULL,
+    password TEXT UNIQUE NOT NULL,
+    lastUpdated TEXT NOT NULL
+  )
+`).run();
+
+ipcMain.handle('db-query', (event, sql, params = []) => {
+  try {
+    const stmt = db.prepare(sql);
+    if (sql.trim().toLowerCase().startsWith('select')) {
+      return stmt.all(...params);
+    } else {
+      return stmt.run(...params);
+    }
+  } catch (err) {
+    console.error(err);
+    throw err;
+  }
+});
 
 const createWindow = () => {
   // Create the browser window.

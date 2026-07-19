@@ -277,40 +277,36 @@ td{
                         <th>Username</th>
                         <th>Password</th>
                         <th>Last Updated</th>
+                        <th></th>
                     </tr>
                 </thead>
-
-                <tbody>
-                    <tr>
-                        <td>Google</td>
-                        <td>john.doe@gmail.com</td>
-                        <td>********</td>
-                        <td>2 days ago</td>
-                        <td><button class="del-btn" onclick="deleteThisRow(this)">Delete</button></td>
-                    </tr>
-                </tbody>
+                <tbody id="pass-table-body"></tbody>
             </table>
         </div>
     </div>
 
 </div>
 </body>
-<script src="src/index.js"></script>
+<script src="src/index.js" defer></script>
+<script src="src/database.js" defer></script>
 <script>
 
-const data = [
-  { id: 1, name: "Google", password: "Developer" },
-];
+    const dataInit = [
+    { id: 1, website:"-", username: "-", password: "-", lastUpdated: "-"},
+    ];
 
-function queryData(dataArray, inputString) {
+    /*const data = [
+    { id: 1, website:"www.google.com/gmail", username: "john.doe@gmail.com", password: "dev", lastUpdated: "Now"},
+    ];*/
 
-  const query = inputString.toLowerCase().trim();
-  
-  return dataArray.filter(item => 
-    item.name.toLowerCase().includes(query)
-  );
-}
+    function queryData(dataArray, inputString) {
 
+    const query = inputString.toLowerCase().trim();
+    
+    return dataArray.filter(item => 
+        item.name.toLowerCase().includes(query)
+    );
+    }
 
 </script>
 </html>

@@ -1,3 +1,4 @@
+// Initialize SQLite database
 
 const Database = require('better-sqlite3');
 
@@ -17,11 +18,13 @@ const insertUser = db.prepare('INSERT INTO users (website, username, password, l
 const info = insertUser.run('Google', 'john.doe@example.com', '****', 'Now');
 console.log(`Inserted row ID: ${info.lastInsertRowid}`);
 
+/*
 const findUser = db.prepare('SELECT * FROM users WHERE email = ?');
 const user = findUser.get('john.doe@example.com');
 console.log('Found user:', user);
 
 const allUsers = db.prepare('SELECT * FROM users').all();
 console.log('All database users:', allUsers);
+*/
 
 db.close();
